@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class UsersPages extends Controller
 {
@@ -31,4 +32,10 @@ class UsersPages extends Controller
         $manga = \App\Manga_table::all();
         return view('add.all_manga',['manga_table'=>$manga]);
     }
+
+    public function profile(){
+        $user = \App\User::find(Auth::user());
+        return view('add.profile',['user'=>$user]);
+    }
+
 }

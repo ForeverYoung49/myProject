@@ -19,7 +19,7 @@ Route::get('/news/{id}', 'UsersPages@showNews')->where('id','[0-9]+')->name('add
 Route::get('/catalog', 'UsersPages@manga')->name('add.all_manga');
 Route::get('/catalog/{id}', 'UsersPages@showManga')->where('id','[0-9]+')->name('add.manga');
 
-
+Route::get('/profile', 'UsersPages@profile')->name('add.profile');
 
 
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
@@ -30,5 +30,3 @@ Route::post('login', 'Auth\LoginController@login');
 
 Route::get('/logout','Auth\LoginController@logout');
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -19,15 +19,22 @@
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="/catalog">Каталог манги</a>
                     </li>
+                @if(!Gate::check('isUser') && !Gate::check('isAdmin'))
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="/register">Регистрация</a>
-                    </li>
+                    </li> 
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="/login">Авторизация</a>
+                    </li>
+                @endif
+                @if(Gate::check('isUser') || Gate::check('isAdmin'))
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="/profile">Личный кабинет</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="/logout">Выйти</a>
                     </li>
+                @endif
                 </ul>
             </div>
         </div>
