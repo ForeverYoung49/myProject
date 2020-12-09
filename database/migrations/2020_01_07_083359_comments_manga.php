@@ -20,6 +20,7 @@ class CommentsManga extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('manga_id')->unsigned()->index();
             $table->foreign('manga_id')->references('id')->on('manga_table')->onDelete('cascade');
+            $table->string('status');
             $table->timestamps();
         });
     }

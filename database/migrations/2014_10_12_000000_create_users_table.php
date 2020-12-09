@@ -17,9 +17,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('img');
+            $table->string('img')->default(json_encode('default.jpg'));
             $table->string('role')->default(json_encode(array('user')));
             $table->integer('rank')->default('0');
+            $table->string('ban');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

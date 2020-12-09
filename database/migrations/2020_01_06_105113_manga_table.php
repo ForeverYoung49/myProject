@@ -17,7 +17,7 @@ class MangaTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->float('rating')->default('0.0');
+            $table->float('rating')->nullable()->default('0.0');
             $table->string('img');
             $table->integer('author_id')->unsigned()->index();
             $table->foreign('author_id')->references('id')->on('author_manga')->onDelete('cascade');

@@ -20,6 +20,7 @@ class CommentsNews extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('news_id')->unsigned()->index();
             $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
+            $table->string('status');
             $table->timestamps();
         });
     }
